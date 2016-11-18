@@ -1,0 +1,32 @@
+{
+  "name": "js-modules",
+  "version": "1.0.0",
+  "description": "Attempt to understand JavaScipt modules",
+  "main": "index.js",
+  "scripts": {
+    "start:es5-modules": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/velmyk/sandbox-js-modules.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "modules",
+    "CommonJS",
+    "AMD",
+    "UMD",
+    "ESmodules",
+    "bundlers"
+  ],
+  "author": "velmyk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/velmyk/sandbox-js-modules/issues"
+  },
+  "homepage": "https://github.com/velmyk/sandbox-js-modules#readme",
+  "devDependencies": {
+    "http-server": "0.9.0"
+  }
+}
