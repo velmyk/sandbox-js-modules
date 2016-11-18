@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AMD Modules</title>
+</head>
+<body>
+    <h1>AMD</h1>
+
+    <script data-main="./app" src="../node_modules/requirejs/require.js"></script>
+    <script>
+        requirejs.config({
+            urlArgs: "bust=" +  (new Date()).getTime()
+        });
+</script>
+</body>
+</html>

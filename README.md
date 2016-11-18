@@ -1,7 +1,7 @@
 # Attempt to finaly understand JavaScript modules
 
 ### Module patterns in ES5:
-##### IIFE:
+#### IIFE:
 ``` javascript
 (function() {
     const privateVar = 'secret';
@@ -9,11 +9,11 @@
     console.log(privateVar);
 })();
 ```
-- encapsulates variables (avoids global scope polution);
-- runs its body immediately when executes;
-- `privateVar` not exposed to global scope; 
+- encapsulates variables (avoids global scope polution)
+- runs its body immediately when executes
+- `privateVar` not exposed to global scope
 
-##### Revealing module pattern - Singleton:
+#### Revealing module pattern - Singleton:
 ``` javascript
 const revealingModuleSingletonCounter = (function(name = 'unnamed') {
     const counter = 1;
@@ -30,11 +30,11 @@ const revealingModuleSingletonCounter = (function(name = 'unnamed') {
 revealingModuleSingletonCounter.increaseCounter(); // 1
 revealingModuleSingletonCounter.increaseCounter(); // 2
 ```
-- encapsulates variables (avoids global scope polution);
-- runs its body immediately when executes and returns public API;
-- revealing module singleton creates one singleton counter in global scope when executes;
+- encapsulates variables (avoids global scope polution)
+- runs its body immediately when executes and returns public API
+- revealing module singleton creates one singleton counter in global scope when executes
 
-##### Revealing module pattern - Factory: 
+#### Revealing module pattern - Factory: 
 ``` javascript
 const RevealingModuleFactoryCounter = function(name = 'unnamed') {
     const counter = 1;
@@ -54,8 +54,34 @@ const myCounterBar = new RevealingModuleFactoryCounter('bar');
 myCounterFoo.increaseCounter(); // 1
 myCounterBar.increaseCounter(); // 1
 ```
-- encapsulates variables (avoids global scope polution);
-- returns an object with public API each time it called;
-- RevealingModuleFactoryCounter creates new counters; 
-- `myCounterFoo` and `myCounterBar` are independant;
-- RevealingModuleFactoryCounter lives in global scope; 
+- encapsulates variables (avoids global scope polution)
+- returns an object with public API each time it called
+- RevealingModuleFactoryCounter creates new counters 
+- `myCounterFoo` and `myCounterBar` are independant
+- RevealingModuleFactoryCounter lives in global scope
+
+
+### AMD module definition:
+``` javascript
+define(['./names'], (names) => {
+    console.log(names.getName()); // Bob
+});
+
+define([], () => {
+    'use strict';
+
+    function getName() {
+        return 'Bob';
+    }
+
+    return {
+        getName: getName
+    };
+});
+```
+- no native support, just a syntax require.js understands
+- needs modules loader - RequireJS
+- encapsulates logic
+- no variables insted require function itself
+- dependencies management
+- modules loads in browser one by one in order they required

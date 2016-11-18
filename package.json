@@ -4,7 +4,7 @@
   "description": "Attempt to understand JavaScipt modules",
   "main": "index.js",
   "scripts": {
-    "start:es5-modules": "http-server",
+    "start": "http-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,5 +28,8 @@
   "homepage": "https://github.com/velmyk/sandbox-js-modules#readme",
   "devDependencies": {
     "http-server": "0.9.0"
+  },
+  "dependencies": {
+    "requirejs": "2.3.2"
   }
 }
