@@ -81,7 +81,43 @@ define([], () => {
 ```
 - no native support, just a syntax require.js understands
 - needs modules loader - RequireJS
+- `define` if a function from RequireJS
 - encapsulates logic
 - no variables insted require function itself
 - dependencies management
 - modules loads in browser one by one in order they required
+
+### CommonJS module
+``` javascript
+// file.js
+'use strict';
+
+const names = require('./names');
+
+console.log(names.getName()); // Bob
+
+----------------
+
+// anotherFile.js
+    'use strict';
+
+function getName() {
+    return 'Bob';
+}
+
+exports.getname = getName;
+```
+- no native support in browser, just a syntax that loader understands
+- native support for CommonJS module in NodeJS environment
+- file is a module
+- defining properties on `exports` object makes them as publik API f the module
+    - `exports` nearly equivalent to `module.exports`
+    - ✓ exports.method = method
+    - ✓ module.exports.method = method (same as above)
+    - ⨉ exports = {};
+    - ⨉ exports = function() {}
+    - ✓ module.exports = {};
+    - ✓ module.exports = function() {}
+- `require` is another function that CommonJS module loader understands
+- CommonJS modules loaders are `SystemJS`
+- pretty similar to AMD approach but is more optimised for browser in some way

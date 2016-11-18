@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CommonJS Modules</title>
+</head>
+<body>
+    <h1>CommonJS</h1>
+
+    <script src="../node_modules/systemjs/dist/system.js"></script>
+    <script>
+        System.config({
+            meta: {
+                format: 'amd'
+            }
+        });
+
+        System.import('./app.js');
+    </script>
+</body>
+</html>

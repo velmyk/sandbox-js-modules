@@ -30,6 +30,7 @@
     "http-server": "0.9.0"
   },
   "dependencies": {
-    "requirejs": "2.3.2"
+    "requirejs": "2.3.2",
+    "systemjs": "0.19.41"
   }
 }
