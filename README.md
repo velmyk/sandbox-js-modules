@@ -121,3 +121,28 @@ exports.getname = getName;
 - `require` is another function that CommonJS module loader understands
 - CommonJS modules loaders are `SystemJS`
 - pretty similar to AMD approach but is more optimised for browser in some way
+
+### ES2015 modules
+``` javascript
+// file.js
+import { getName } from './names.js';
+
+console.log(getName()); // Bob
+
+----------------
+
+// anotherFile.js
+export function getName() {
+    return 'Bob';
+}
+```
+- "Native" modules
+- support for modules built-in to JavaScript
+- support for dependency management
+- encapsulate implementation details
+- explicitly expose public API
+- file is a module
+- 'use strict' by default
+- aliases for exported and imported members
+- no libraries required to create modules
+- currently (late 2016) must transpile to ES5
